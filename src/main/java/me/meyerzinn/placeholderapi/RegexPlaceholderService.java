@@ -20,7 +20,7 @@ public class RegexPlaceholderService implements PlaceholderService {
 
     private Map<String, Placeholder> placeholders = new HashMap<>();
 
-    private final Pattern placeholderPattern = Pattern.compile("/(\\{)(.*)(\\})/g");
+    private final Pattern placeholderPattern = Pattern.compile("(\\{)(.*)(\\})");
 
     private LoadingCache<String, Pattern> compiledPatterns = CacheBuilder.newBuilder().build(new CacheLoader<String, Pattern>() {
         @Override public Pattern load(String key) {
@@ -67,5 +67,9 @@ public class RegexPlaceholderService implements PlaceholderService {
 
     @Override public void registerPlaceholder(String regex, Placeholder replacer) {
         placeholders.put(regex, replacer);
+    }
+
+    @Override public Placeholder getPlaceholder(String regex) {
+        return placeholders.get(regex);
     }
 }

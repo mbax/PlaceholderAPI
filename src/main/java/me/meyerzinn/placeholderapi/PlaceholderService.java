@@ -11,4 +11,6 @@ public interface PlaceholderService {
 
     void registerPlaceholder(String regex, Placeholder replacer);
 
+    Placeholder getPlaceholder(String regex);
+
 }
