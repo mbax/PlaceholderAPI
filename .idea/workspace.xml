@@ -26,14 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="140fc368-9b68-43ff-b5e8-40018b8f5637" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java" afterPath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderAPI.java" afterPath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderAPI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java" afterPath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java" afterPath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/PlaceholderAPITest.java" afterPath="$PROJECT_DIR$/src/test/java/PlaceholderAPITest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="PlaceholderAPI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -155,8 +148,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor vertical-scroll-proportion="0.0">
@@ -1322,7 +1315,7 @@
       <workItem from="1457375189028" duration="2915000" />
       <workItem from="1457380755014" duration="413000" />
       <workItem from="1457382544303" duration="670000" />
-      <workItem from="1457383244315" duration="4102000" />
+      <workItem from="1457383244315" duration="4156000" />
     </task>
     <servers />
   </component>
@@ -1359,7 +1352,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22053000" />
+    <option name="totallyTimeSpent" value="22107000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1442,7 +1435,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor vertical-scroll-proportion="0.0">
@@ -1832,7 +1825,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor vertical-scroll-proportion="0.0">
