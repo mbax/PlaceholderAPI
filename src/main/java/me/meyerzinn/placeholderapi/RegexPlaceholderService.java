@@ -42,14 +42,14 @@ public class RegexPlaceholderService implements PlaceholderService {
             });
 
     @Override
-    public String replace(User user, Pattern pattern, String input) {
+    public String replace(User user, String input) {
         String output = input;
         Matcher matcher = placeholderPattern.matcher(input);
         while (matcher.find()) {
             try {
                 Optional<Placeholder> placeholder = cache.get(matcher.group(1));
                 if (placeholder.isPresent()) {
-                    output = placeholder.get().replace(user, pattern, output);
+                    output = placeholder.get().replace(user, output);
                 }
             } catch (ExecutionException e) {
                 continue;
