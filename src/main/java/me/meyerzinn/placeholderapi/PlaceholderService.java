@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  */
 public interface PlaceholderService {
 
-    String replace(User player, Pattern pattern, String input);
+    String replace(User player, String input);
 
     void registerPlaceholder(Pattern regex, Placeholder replacer);
 
