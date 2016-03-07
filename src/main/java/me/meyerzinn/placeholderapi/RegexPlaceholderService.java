@@ -42,7 +42,7 @@ public class RegexPlaceholderService implements PlaceholderService {
             });
 
     @Override
-    public String replace(User user, String input) {
+    public String replace(User user, Pattern pattern, String input) {
         String output = input;
         Matcher matcher = placeholderPattern.matcher(input);
         while (matcher.find()) {
