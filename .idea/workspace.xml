@@ -27,8 +27,7 @@
   <component name="ChangeListManager">
     <list default="true" id="140fc368-9b68-43ff-b5e8-40018b8f5637" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java" afterPath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java" afterPath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java" afterPath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java" />
     </list>
     <ignored path="PlaceholderAPI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -164,9 +163,11 @@
       <file leaf-file-name="Placeholder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39130434">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.35869566">
+              <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -522,13 +523,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderVolatility.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderAPI.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java" />
       </list>
     </option>
   </component>
@@ -1140,12 +1141,12 @@
       <created>1457323975536</created>
       <option name="number" value="Default" />
       <updated>1457323975536</updated>
-      <workItem from="1457323979018" duration="4454000" />
+      <workItem from="1457323979018" duration="4772000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4454000" />
+    <option name="totallyTimeSpent" value="4772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1252,9 +1253,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39130434">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.35869566">
+          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
