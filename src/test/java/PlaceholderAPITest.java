@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.spongepowered.api.entity.living.player.User;
 
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,22 +15,19 @@ import java.util.regex.Pattern;
 public class PlaceholderAPITest {
 
     private PlaceholderService service;
-    private final Pattern p = Pattern.compile("(number:)(\\d*)");
 
 
     @Before public void setupService() {
         service = new RegexPlaceholderService();
-        service.registerPlaceholder("(number:)(\\d*)", new Placeholder() {
-            @Override public String replace(User user, String input) {
-                Matcher m = p.matcher(input);
-                if (m.find()) {
-                    return "Number: " + m.group(2);
-                }
-                return "";
+        service.registerPlaceholder(Pattern.compile("(number:)(\\d+)"), new Placeholder() {
+            @Override public String replace(Optional<User> user, Pattern pattern, String actual) {
+                Matcher m = pattern.matcher(actual);
+                m.find();
+                return "#" + m.group(2);
             }
         });
-        service.registerPlaceholder("hallo", new Placeholder() {
-            @Override public String replace(User user, String placeholder) {
+        service.registerPlaceholder(Pattern.compile("hallo"), new Placeholder() {
+            @Override public String replace(Optional<User> user, Pattern pattern, String actual) {
                 return "Hi!";
             }
         });
@@ -63,7 +61,7 @@ public class PlaceholderAPITest {
     public void testNumberReplacement() {
 
         long start = System.currentTimeMillis();
-        System.out.println("Begin Number Replacement Test: " + start + "ns");
+        System.out.println("Begin Number Replacement Test: " + start + "ms");
         System.out.println(service.replace(null, "{number:100}"));
         System.out.println("Phase 1 (init) complete: " + (System.currentTimeMillis() - start) + "ms");
         long cacheStart = System.currentTimeMillis();

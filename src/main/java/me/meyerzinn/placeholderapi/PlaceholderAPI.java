@@ -15,4 +15,5 @@ public class PlaceholderAPI {
     public void onGameInit(GameInitializationEvent event) {
         Sponge.getServiceManager().setProvider(this, PlaceholderService.class, new RegexPlaceholderService());
     }
+
 }

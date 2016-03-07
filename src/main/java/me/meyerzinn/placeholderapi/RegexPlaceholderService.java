@@ -8,7 +8,6 @@ import org.spongepowered.api.entity.living.player.User;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,22 +17,16 @@ import java.util.regex.Pattern;
  */
 public class RegexPlaceholderService implements PlaceholderService {
 
-    private Map<String, Placeholder> placeholders = new HashMap<>();
+    private final Map<Pattern, Placeholder> PLACEHOLDERS = new HashMap<>();
 
-    private final Pattern placeholderPattern = Pattern.compile("\\{([^\\}]*)\\}");
+    private final Pattern PLACEHOLDER_PATTERN = Pattern.compile("\\{([^\\}]*)\\}");
 
-    private LoadingCache<String, Pattern> compiledPatterns = CacheBuilder.newBuilder().build(new CacheLoader<String, Pattern>() {
-        @Override public Pattern load(String key) {
-            return Pattern.compile(key);
-        }
-    });
-
-    private LoadingCache<String, Placeholder> cache = CacheBuilder.newBuilder().expireAfterAccess(10, TimeUnit.MINUTES).build(
-            new CacheLoader<String, Placeholder>() {
-                @Override public Placeholder load(String key) throws Exception {
+    // Yes, we need a lot of Pattern objects. The speed benefit makes up for it.
+    private final LoadingCache<String, Pattern> PATTERN_CACHE = CacheBuilder.newBuilder().expireAfterAccess(10, TimeUnit.MINUTES).build(
+            new CacheLoader<String, Pattern>() {
+                @Override public Pattern load(String key) throws Exception {
                     Matcher matcher = null;
-                    for (String s : placeholders.keySet()) {
-                        Pattern p = compiledPatterns.getUnchecked(s);
+                    for (Pattern p : PLACEHOLDERS.keySet()) {
                         if (matcher == null) {
                             matcher = p.matcher(key);
                         } else {
@@ -41,7 +34,7 @@ public class RegexPlaceholderService implements PlaceholderService {
                             matcher.usePattern(p);
                         }
                         if (matcher.find()) {
-                            return placeholders.get(p.pattern());
+                            return p;
                         }
                     }
                     throw new Exception();
@@ -50,13 +43,14 @@ public class RegexPlaceholderService implements PlaceholderService {
     );
 
     @Override
-    public String replace(User user, String input) {
+    public String replace(Optional<User> user, String input) {
         String output = input;
-        Matcher matcher = placeholderPattern.matcher(input);
+        Matcher matcher = PLACEHOLDER_PATTERN.matcher(input);
         while (matcher.find()) {
             try {
-                Placeholder placeholder = cache.get(matcher.group(1));
-                output = output.replaceAll("\\{" + matcher.group(1) + "\\}", placeholder.replace(user, matcher.group(1)));
+                Placeholder placeholder = PLACEHOLDERS.get(PATTERN_CACHE.get(matcher.group(1)));
+                output = output.replaceAll("\\{" + matcher.group(1) + "\\}", placeholder.replace(user, PATTERN_CACHE.get(matcher.group(1)), matcher
+                        .group(1)));
             } catch (Exception e) {
                 continue;
             }
@@ -64,11 +58,19 @@ public class RegexPlaceholderService implements PlaceholderService {
         return output;
     }
 
-    @Override public void registerPlaceholder(String regex, Placeholder replacer) {
-        placeholders.put(regex, replacer);
+    @Override public void registerPlaceholder(Pattern regex, Placeholder replacer) {
+        PLACEHOLDERS.put(regex, replacer);
     }
 
-    @Override public Placeholder getPlaceholder(String regex) {
-        return placeholders.get(regex);
+    @Override public void removePlaceholder(Pattern key) {
+        PATTERN_CACHE.invalidate(key);
+    }
+
+    @Override public Optional<Placeholder> getPlaceholder(String regex) {
+        try {
+            return Optional.of(PLACEHOLDERS.get(PATTERN_CACHE.get(regex)));
+        } catch (Exception e) {
+            return Optional.empty();
+        }
     }
 }
