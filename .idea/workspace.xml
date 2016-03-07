@@ -26,7 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="140fc368-9b68-43ff-b5e8-40018b8f5637" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
     </list>
     <ignored path="PlaceholderAPI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -138,17 +138,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.032608695">
+              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -577,13 +577,13 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/test/java/me/meyerzinn/placeholderapi/PlaceholderAPI.java" />
         <option value="$PROJECT_DIR$/src/test/java/me/meyerzinn/placeholderapi/PlaceholderAPITest.java" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderAPI.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java" />
         <option value="$PROJECT_DIR$/src/test/java/PlaceholderAPITest.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java" />
         <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -1315,7 +1315,7 @@
       <workItem from="1457375189028" duration="2915000" />
       <workItem from="1457380755014" duration="413000" />
       <workItem from="1457382544303" duration="670000" />
-      <workItem from="1457383244315" duration="4156000" />
+      <workItem from="1457383244315" duration="4205000" />
     </task>
     <servers />
   </component>
@@ -1352,7 +1352,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22107000" />
+    <option name="totallyTimeSpent" value="22156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1757,14 +1757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1833,6 +1825,14 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.032608695">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
