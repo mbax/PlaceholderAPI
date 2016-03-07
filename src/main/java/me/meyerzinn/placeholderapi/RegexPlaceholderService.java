@@ -49,7 +49,7 @@ public class RegexPlaceholderService implements PlaceholderService {
             try {
                 Optional<Placeholder> placeholder = cache.get(matcher.group(1));
                 if (placeholder.isPresent()) {
-                    output = placeholder.get().replace(user, output);
+                    output = placeholder.get().replace(user, pattern, output);
                 }
             } catch (ExecutionException e) {
                 continue;
