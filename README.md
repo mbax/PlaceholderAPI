@@ -43,7 +43,7 @@ if (service.isPresent()) {
 To register a Placeholder:
 ```java
 // Let's register {demo} --> Welcome!
-service.register(Pattern.compile("demo"), new Placeholder() {
+service.registerPlaceholder(Pattern.compile("demo"), new Placeholder() {
     public String replace(Optional<User> user, Pattern pattern, String actual) {
         return "Welcome!";
     }
@@ -52,7 +52,7 @@ service.register(Pattern.compile("demo"), new Placeholder() {
 
 Let's convert `{number:100}` to `#100`:
 ```java
-service.registerPlaceholder("(number:)(\\d)", new Placeholder() {
+service.registerPlaceholder(Pattern.compile("(number:)(\\d)"), new Placeholder() {
     @Override public String replace(Optional<User> user, Pattern pattern, String actual) {
         Matcher m = pattern.matcher(actual);
         m.find(); // There has to be a match.
@@ -63,7 +63,7 @@ service.registerPlaceholder("(number:)(\\d)", new Placeholder() {
 
 Time to get fancy! Let's send a player their ping:
 ```java
-service.registerPlaceholder("ping", new Placeholder() {
+service.registerPlaceholder(Pattern.compile("ping"), new Placeholder() {
     @Override public String replace(Optional<User> user, Pattern pattern, String actual) {
         if (user.isPresent() && user.get().isOnline() && user.get().getPlayer().isPresent()) {
             return "" + user.get().getPlayer().get().getConnection().getPing();
