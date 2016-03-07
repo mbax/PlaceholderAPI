@@ -20,7 +20,7 @@ public class RegexPlaceholderService implements PlaceholderService {
 
     private Map<String, Placeholder> placeholders = new HashMap<>();
 
-    private final Pattern placeholderPattern = Pattern.compile("(\\{)(.*)(\\})");
+    private final Pattern placeholderPattern = Pattern.compile("\\{([^\\}]*)\\}");
 
     private LoadingCache<String, Pattern> compiledPatterns = CacheBuilder.newBuilder().build(new CacheLoader<String, Pattern>() {
         @Override public Pattern load(String key) {
@@ -28,9 +28,9 @@ public class RegexPlaceholderService implements PlaceholderService {
         }
     });
 
-    private LoadingCache<String, Optional<Placeholder>> cache = CacheBuilder.newBuilder().expireAfterAccess(10, TimeUnit.MINUTES).build(
-            new CacheLoader<String, Optional<Placeholder>>() {
-                @Override public Optional<Placeholder> load(String key) {
+    private LoadingCache<String, Placeholder> cache = CacheBuilder.newBuilder().expireAfterAccess(10, TimeUnit.MINUTES).build(
+            new CacheLoader<String, Placeholder>() {
+                @Override public Placeholder load(String key) throws Exception {
                     Matcher matcher = null;
                     for (String s : placeholders.keySet()) {
                         Pattern p = compiledPatterns.getUnchecked(s);
@@ -40,15 +40,14 @@ public class RegexPlaceholderService implements PlaceholderService {
                             matcher.reset();
                             matcher.usePattern(p);
                         }
-                        System.out.println("Looking for matches.");
                         if (matcher.find()) {
-                            System.out.println("Found!");
-                            return Optional.of(placeholders.get(key));
+                            return placeholders.get(p.pattern());
                         }
                     }
-                    return Optional.empty();
+                    throw new Exception();
                 }
-            });
+            }
+    );
 
     @Override
     public String replace(User user, String input) {
@@ -56,12 +55,9 @@ public class RegexPlaceholderService implements PlaceholderService {
         Matcher matcher = placeholderPattern.matcher(input);
         while (matcher.find()) {
             try {
-                System.out.println(matcher.group(2));
-                Optional<Placeholder> placeholder = cache.get(matcher.group(2));
-                if (placeholder.isPresent()) {
-                    output = placeholder.get().replace(user, output);
-                }
-            } catch (ExecutionException e) {
+                Placeholder placeholder = cache.get(matcher.group(1));
+                output = output.replaceAll("\\{" + matcher.group(1) + "\\}", placeholder.replace(user, matcher.group(1)));
+            } catch (Exception e) {
                 continue;
             }
         }
