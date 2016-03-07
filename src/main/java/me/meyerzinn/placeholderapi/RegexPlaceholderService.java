@@ -40,8 +40,10 @@ public class RegexPlaceholderService implements PlaceholderService {
                             matcher.reset();
                             matcher.usePattern(p);
                         }
+                        System.out.println("Looking for matches.");
                         if (matcher.find()) {
-                            return Optional.of(placeholders.get(p));
+                            System.out.println("Found!");
+                            return Optional.of(placeholders.get(key));
                         }
                     }
                     return Optional.empty();
@@ -54,7 +56,8 @@ public class RegexPlaceholderService implements PlaceholderService {
         Matcher matcher = placeholderPattern.matcher(input);
         while (matcher.find()) {
             try {
-                Optional<Placeholder> placeholder = cache.get(matcher.group(1));
+                System.out.println(matcher.group(2));
+                Optional<Placeholder> placeholder = cache.get(matcher.group(2));
                 if (placeholder.isPresent()) {
                     output = placeholder.get().replace(user, output);
                 }
