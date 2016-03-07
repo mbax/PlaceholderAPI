@@ -26,8 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="140fc368-9b68-43ff-b5e8-40018b8f5637" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java" afterPath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java" afterPath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java" afterPath="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java" />
     </list>
     <ignored path="PlaceholderAPI.iws" />
@@ -139,33 +138,32 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegexPlaceholderService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RegexPlaceholderService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3478261">
-              <caret line="50" column="46" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2238#2239#0" expanded="true" />
-                <element signature="e#2287#2288#0" expanded="true" />
+                <element signature="e#904#905#0" expanded="true" />
+                <element signature="e#955#956#0" expanded="true" />
+                <element signature="e#2547#2548#0" expanded="true" />
+                <element signature="e#2596#2597#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Placeholder.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Placeholder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.22826087">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -526,9 +524,9 @@
         <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderAPI.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java" />
       </list>
     </option>
   </component>
@@ -668,7 +666,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Gradle.PlaceholderAPI [jar]">
+  <component name="RunManager" selected="Gradle.PlaceholderAPI [clean build jar]">
     <configuration default="false" name="PlaceholderAPI [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -698,6 +696,45 @@
         </option>
         <option name="taskNames">
           <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="PlaceholderAPI [build jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="PlaceholderAPI [clean build jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+            <option value="build" />
             <option value="jar" />
           </list>
         </option>
@@ -1122,14 +1159,18 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Gradle.PlaceholderAPI [build]" />
       <item index="1" class="java.lang.String" itemvalue="Gradle.PlaceholderAPI [jar]" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.PlaceholderAPI [build jar]" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.PlaceholderAPI [clean build jar]" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.PlaceholderAPI [jar]" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.PlaceholderAPI [build]" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Gradle.PlaceholderAPI [clean build jar]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.PlaceholderAPI [build jar]" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.PlaceholderAPI [jar]" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.PlaceholderAPI [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -1140,16 +1181,16 @@
       <created>1457323975536</created>
       <option name="number" value="Default" />
       <updated>1457323975536</updated>
-      <workItem from="1457323979018" duration="6283000" />
+      <workItem from="1457323979018" duration="6988000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6283000" />
+    <option name="totallyTimeSpent" value="6988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1157,7 +1198,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1218,7 +1259,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding>
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+            <element signature="e#2547#2548#0" expanded="true" />
+            <element signature="e#2596#2597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
@@ -1236,25 +1290,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/PlaceholderService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/Placeholder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/meyerzinn/placeholderapi/RegexPlaceholderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3478261">
-          <caret line="50" column="46" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2238#2239#0" expanded="true" />
-            <element signature="e#2287#2288#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.22826087">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

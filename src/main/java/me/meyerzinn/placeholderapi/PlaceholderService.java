@@ -2,8 +2,6 @@ package me.meyerzinn.placeholderapi;
 
 import org.spongepowered.api.entity.living.player.User;
 
-import java.util.regex.Pattern;
-
 /**
  * Created by meyerzinn on 3/6/16.
  */
@@ -11,6 +9,6 @@ public interface PlaceholderService {
 
     String replace(User player, String input);
 
-    void registerPlaceholder(Pattern regex, Placeholder replacer);
+    void registerPlaceholder(String regex, Placeholder replacer);
 
 }

@@ -18,15 +18,22 @@ import java.util.regex.Pattern;
  */
 public class RegexPlaceholderService implements PlaceholderService {
 
-    private Map<Pattern, Placeholder> placeholders = new HashMap<>();
+    private Map<String, Placeholder> placeholders = new HashMap<>();
 
     private final Pattern placeholderPattern = Pattern.compile("/(\\{)(.*)(\\})/g");
+
+    private LoadingCache<String, Pattern> compiledPatterns = CacheBuilder.newBuilder().build(new CacheLoader<String, Pattern>() {
+        @Override public Pattern load(String key) {
+            return Pattern.compile(key);
+        }
+    });
 
     private LoadingCache<String, Optional<Placeholder>> cache = CacheBuilder.newBuilder().expireAfterAccess(10, TimeUnit.MINUTES).build(
             new CacheLoader<String, Optional<Placeholder>>() {
                 @Override public Optional<Placeholder> load(String key) {
                     Matcher matcher = null;
-                    for (Pattern p : placeholders.keySet()) {
+                    for (String s : placeholders.keySet()) {
+                        Pattern p = compiledPatterns.getUnchecked(s);
                         if (matcher == null) {
                             matcher = p.matcher(key);
                         } else {
@@ -58,7 +65,7 @@ public class RegexPlaceholderService implements PlaceholderService {
         return output;
     }
 
-    @Override public void registerPlaceholder(Pattern regex, Placeholder replacer) {
+    @Override public void registerPlaceholder(String regex, Placeholder replacer) {
         placeholders.put(regex, replacer);
     }
 }
