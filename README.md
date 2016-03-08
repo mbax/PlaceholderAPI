@@ -1,4 +1,4 @@
-# PlaceholderAPI [![Latest Release](https://img.shields.io/badge/download-1.0--SNAPSHOT-brightgreen.svg)](https://github.com/AniOrg/PlaceholderAPI/releases/latest) [![Build Status](https://travis-ci.org/AniOrg/PlaceholderAPI.svg?branch=master)](https://travis-ci.org/AniOrg/PlaceholderAPI)
+# PlaceholderAPI [![Latest Release](https://img.shields.io/badge/download-1.1--SNAPSHOT-brightgreen.svg)](https://github.com/AniOrg/PlaceholderAPI/releases/latest) [![Build Status](https://travis-ci.org/AniOrg/PlaceholderAPI.svg?branch=master)](https://travis-ci.org/AniOrg/PlaceholderAPI)
 
 This project was created to make it easier for plugins to offer "placeholder" text to players. Get the latest download [here](https://github.com/AniOrg/PlaceholderAPI/releases/latest) (any plugins that want to use PlaceholderAPI functionality needs to have this installed).
 
