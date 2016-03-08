@@ -52,7 +52,6 @@ public class RegexPlaceholderService implements PlaceholderService {
                 output = output.replaceAll("\\{" + matcher.group(1) + "\\}", placeholder.replace(user, PATTERN_CACHE.get(matcher.group(1)), matcher
                         .group(1)));
             } catch (Exception e) {
-                continue;
             }
         }
         return output;

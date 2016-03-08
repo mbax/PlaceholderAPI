@@ -3,7 +3,6 @@ package me.meyerzinn.placeholderapi;
 import org.spongepowered.api.entity.living.player.User;
 
 import java.util.Optional;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**

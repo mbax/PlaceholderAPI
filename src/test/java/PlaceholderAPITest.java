@@ -9,6 +9,9 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
+import static org.junit.Assert.*;
+
 /**
  * Created by meyerzinn on 3/7/16.
  */
@@ -42,7 +45,7 @@ public class PlaceholderAPITest {
         long cacheStart = System.currentTimeMillis();
         System.out.println("Begin Cache Test for Single Word: " + cacheStart);
         for (int i = 0; i < 10; i++) {
-            System.out.println(service.replace(null, "{hallo}"));
+            service.replace(null, "{hallo}");
         }
         System.out.println("Time for 10 iterations: " + (System.currentTimeMillis() - cacheStart) + "ms");
     }
