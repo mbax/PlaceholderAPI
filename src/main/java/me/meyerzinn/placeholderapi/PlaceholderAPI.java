@@ -8,7 +8,7 @@ import org.spongepowered.api.plugin.Plugin;
 /**
  * Created by meyerzinn on 3/6/16.
  */
-@Plugin(id = "placeholderapi", name = "PlaceholderAPI", version = "1.0-SNAPSHOT")
+@Plugin(id = "placeholderapi", name = "PlaceholderAPI", version = "v1.1-SNAPSHOT")
 public class PlaceholderAPI {
 
     @Listener
