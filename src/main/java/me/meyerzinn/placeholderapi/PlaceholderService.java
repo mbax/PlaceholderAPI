@@ -5,12 +5,14 @@ import org.spongepowered.api.entity.living.player.User;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
+import javax.annotation.Nonnull;
+
 /**
  * Created by meyerzinn on 3/6/16.
  */
 public interface PlaceholderService {
 
-    String replace(Optional<User> player, String input);
+    String replace(@Nonnull Optional<User> player, String input);
 
     void registerPlaceholder(Pattern regex, Placeholder replacer);
 

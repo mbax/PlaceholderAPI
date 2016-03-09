@@ -12,6 +12,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.annotation.Nonnull;
+
 /**
  * Created by meyerzinn on 3/6/16.
  */
@@ -43,14 +45,18 @@ public class RegexPlaceholderService implements PlaceholderService {
     );
 
     @Override
-    public String replace(Optional<User> user, String input) {
+    public String replace(@Nonnull Optional<User> user, String input) {
         String output = input;
         Matcher matcher = PLACEHOLDER_PATTERN.matcher(input);
         while (matcher.find()) {
             try {
                 Placeholder placeholder = PLACEHOLDERS.get(PATTERN_CACHE.get(matcher.group(1)));
-                output = output.replaceAll("\\{" + matcher.group(1) + "\\}", placeholder.replace(user, PATTERN_CACHE.get(matcher.group(1)), matcher
-                        .group(1)));
+                output = output.replaceAll("\\{" + matcher.group(1) + "\\}", placeholder.replace((user != null) ? user : Optional.empty(),
+                        PATTERN_CACHE.get
+                                (matcher.group
+                                        (1)),
+                        matcher
+                                .group(1)));
             } catch (Exception e) {
             }
         }
