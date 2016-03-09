@@ -3,6 +3,7 @@ package me.meyerzinn.placeholderapi;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
+import org.apache.commons.lang3.Validate;
 import org.spongepowered.api.entity.living.player.User;
 
 import java.util.HashMap;
@@ -46,21 +47,26 @@ public class RegexPlaceholderService implements PlaceholderService {
 
     @Override
     public String replace(@Nonnull Optional<User> user, String input) {
-        String output = input;
+        Validate.notNull(user);
         Matcher matcher = PLACEHOLDER_PATTERN.matcher(input);
+        int start = 0;
+        StringBuilder builder = new StringBuilder(input.length());
         while (matcher.find()) {
+            String group1 = matcher.group(1);
+            Pattern pattern;
             try {
-                Placeholder placeholder = PLACEHOLDERS.get(PATTERN_CACHE.get(matcher.group(1)));
-                output = output.replaceAll("\\{" + matcher.group(1) + "\\}", placeholder.replace((user != null) ? user : Optional.empty(),
-                        PATTERN_CACHE.get
-                                (matcher.group
-                                        (1)),
-                        matcher
-                                .group(1)));
-            } catch (Exception e) {
+                pattern = PATTERN_CACHE.get(group1);
+            } catch (Exception ignored) {
+                continue;
             }
+            builder.append(input.substring(start, matcher.start(1) - 1));
+            start = matcher.end(1) + 1;
+            builder.append(PLACEHOLDERS.get(pattern).replace(user, pattern, group1));
         }
-        return output;
+        if (start < input.length()) {
+            builder.append(input.substring(start));
+        }
+        return builder.toString();
     }
 
     @Override public void registerPlaceholder(Pattern regex, Placeholder replacer) {
